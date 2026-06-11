@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BUSINESS, SERVICES, LOCATIONS, TESTIMONIALS, WORK_PHOTOS } from "@/lib/constants";
-import { Phone, MapPin, Shield, Award, ArrowRight } from "lucide-react";
+import { Phone, MapPin, Award, ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -28,13 +28,13 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-xl text-white/90">
             Decks, porches, siding, bathroom remodels, electrical &amp; full home improvements.<br className="hidden sm:block" />
-            Licensed. Insured. Serving Spartanburg and the Upstate for {BUSINESS.yearsExperience} years.
+            Serving Spartanburg and the Upstate for {BUSINESS.yearsExperience} years.
           </p>
 
           {/* Prominent logo mark in hero to center the brand */}
           <div className="mt-6 flex justify-center">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo-banner.png" 
               alt={BUSINESS.name} 
               className="h-20 md:h-28 w-auto opacity-95" 
             />
@@ -66,10 +66,6 @@ export default function Home() {
       {/* TRUST BAR — Clean, Apple/OpenAI minimal style */}
       <section className="border-b border-slate-800 py-6" style={{ background: 'var(--surface)' }}>
         <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm">
-          <div className="trust-item">
-            <Shield className="h-4 w-4" />
-            <span>{BUSINESS.license}</span>
-          </div>
           <div className="trust-item">
             <Award className="h-4 w-4" />
             <span>{BUSINESS.yearsExperience} years of experience (crew with wide variety of skills)</span>
@@ -166,8 +162,8 @@ export default function Home() {
             <div key={idx} className="photo-card group relative aspect-[16/11] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={photo.src}
-                alt={photo.caption}
+                src={photo.images[0].src}
+                alt={photo.images[0].caption}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 p-4">

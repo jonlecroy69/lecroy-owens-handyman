@@ -32,7 +32,7 @@ export default function GalleryPage() {
   };
 
   const currentPhoto = modalIndex !== null ? WORK_PHOTOS[modalIndex] : null;
-  const currentImages = currentPhoto ? currentPhoto.images : [];
+  const currentImages = currentPhoto?.images || [];
   const currentImage = currentImages[imageIndex] || currentImages[0];
 
   return (
@@ -41,7 +41,7 @@ export default function GalleryPage() {
         <div className="text-[var(--logo-teal)] text-xs tracking-[2px] font-semibold">OUR CRAFTSMANSHIP</div>
         <h1 className="mt-2 text-4xl font-semibold tracking-tighter">Recent Projects in Spartanburg &amp; the Upstate</h1>
         <p className="mt-3 text-[var(--text-muted)] max-w-lg mx-auto">
-          Real work we’ve completed for homeowners across the area. These photos show the quality and care we bring to every job — decks, siding, bathrooms, flooring, and full remodels.
+          Real work we've completed for homeowners across the area. These photos show the quality and care we bring to every job — decks, siding, bathrooms, flooring, and full remodels.
         </p>
         <p className="mt-2 text-[var(--logo-cream)] text-sm tracking-[2px]">QUALITY WORK. HONEST PRICES. BUILT TO LAST.</p>
       </div>

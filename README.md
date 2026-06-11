@@ -24,12 +24,15 @@ Open http://localhost:3000
 - **License**: Fully Licensed & Insured SC Residential Builder
 - **Primary Area**: Spartanburg County + Upstate SC (50-100 miles)
 - **Services**: Decks & Porches, Siding, Bathroom Remodeling, Flooring, Home Remodeling, Electrical, Sheds, General Handyman
+- **Experience**: 10+ years of experience (crew with wide variety of skills) — hundreds of decks built, full home remodels from kitchens to additions
 
 **TODOs before launch** (easy to edit):
-1. Update email in `lib/constants.ts`
-2. Update exact years experience + any highlights in `lib/constants.ts`
-3. Replace placeholder testimonials with real ones
-4. Get a free Formspree form endpoint (formspree.io) and replace `YOUR_FORM_ID` in the contact form on the homepage
+1. **Contact Form (Formspree)**: Done! 
+   - Endpoint is set to https://formspree.io/f/xojznlga
+   - The form (in components/ContactForm.tsx) submits via fetch (AJAX), shows loading/success states, has honeypot spam protection, and doesn't reload the page. Submissions go straight to your email.
+2. Update email in `lib/constants.ts` (currently contact@lecroy-owens.com)
+3. Update exact years experience + any highlights in `lib/constants.ts` (currently "10+ years of experience (crew with wide variety of skills)" — hundreds of decks built, full home remodels from kitchens to additions)
+4. Replace placeholder testimonials with real ones in `lib/constants.ts` (currently using good placeholders; swap note removed)
 5. Choose and assign your real domain (see Deployment section below)
 6. (Optional) Add real street address + lat/long in constants for richer schema
 
@@ -88,8 +91,15 @@ Once the project is deployed on Vercel:
 ### 4. Post-Launch Essentials
 - **Google Search Console**: Add your domain and submit sitemap (`https://lecroy-owens.com/sitemap.xml`)
 - **Google Business Profile**: Claim/update it and add your new website + photos from the gallery.
-- **Formspree**: Set up the real form endpoint for the contact form.
+- **Formspree**: Already set up (endpoint: https://formspree.io/f/xdavldjp). The form has nice AJAX submit + success state.
 - **Analytics**: Vercel Analytics is already free and on by default. Add GA4 if you want.
+
+### 5. WWW Redirect
+I've added a `vercel.json` that automatically redirects `www.lecroy-owens.com` → `lecroy-owens.com` (non-www is primary, which is modern and fine for SEO).
+
+When adding your domain in Vercel:
+- Add both `lecroy-owens.com` and `www.lecroy-owens.com`
+- Vercel will verify the DNS. The redirect is handled automatically by the config.
 
 The site is fully production-ready. Let's get a domain chosen and deployed! 
 

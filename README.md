@@ -21,7 +21,7 @@ Open http://localhost:3000
 ## Key Business Details (from constants.ts)
 - **Name**: LeCroy & Owens Handyman & Remodeling Co.
 - **Phone**: 864-270-2794 (click-to-call everywhere)
-- **License**: (Removed per request)
+- **License**: Fully Licensed & Insured SC Residential Builder
 - **Primary Area**: Spartanburg County + Upstate SC (50-100 miles)
 - **Services**: Decks & Porches, Siding, Bathroom Remodeling, Flooring, Home Remodeling, Electrical, Sheds, General Handyman
 - **Experience**: 10+ years of experience (crew with wide variety of skills) — hundreds of decks built, full home remodels from kitchens to additions

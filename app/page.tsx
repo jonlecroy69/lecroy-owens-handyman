@@ -34,7 +34,7 @@ export default function Home() {
           {/* Prominent logo mark in hero to center the brand */}
           <div className="mt-6 flex justify-center">
             <img 
-              src="/images/logo-hero.png" 
+              src="/images/logo.png" 
               alt={BUSINESS.name} 
               className="h-20 md:h-28 w-auto opacity-95" 
             />
@@ -66,7 +66,10 @@ export default function Home() {
       {/* TRUST BAR — Clean, Apple/OpenAI minimal style */}
       <section className="border-b border-slate-800 py-6" style={{ background: 'var(--surface)' }}>
         <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm">
-
+          <div className="trust-item">
+            <Shield className="h-4 w-4" />
+            <span>{BUSINESS.license}</span>
+          </div>
           <div className="trust-item">
             <Award className="h-4 w-4" />
             <span>{BUSINESS.yearsExperience} years of experience (crew with wide variety of skills)</span>
@@ -163,7 +166,7 @@ export default function Home() {
             <div key={idx} className="photo-card group relative aspect-[16/11] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={photo.images[0]}
+                src={photo.src}
                 alt={photo.caption}
                 className="absolute inset-0 h-full w-full object-cover"
               />

@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex h-28 md:h-32 items-center justify-between">
           <Link href="/" className="flex items-center gap-3 -ml-1 sm:-ml-2">
             <img 
-              src="/images/logo-nav.png" 
+              src="/images/logo.png" 
               alt={BUSINESS.name} 
               className="h-16 md:h-24 w-auto" 
             />

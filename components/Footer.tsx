@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand + NAP */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <img src="/images/logo-nav.png" alt={BUSINESS.name} className="h-12 md:h-16 w-auto" />
+              <img src="/images/logo.png" alt={BUSINESS.name} className="h-12 md:h-16 w-auto" />
             </div>
             <div className="font-semibold text-white text-base tracking-tight mb-1">
               {BUSINESS.name}

@@ -6,33 +6,21 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function GalleryPage() {
   const [modalIndex, setModalIndex] = useState<number | null>(null);
-  const [imageIndex, setImageIndex] = useState(0);
 
-  const openModal = (index: number) => {
-    setModalIndex(index);
-    setImageIndex(0);
-  };
-  const closeModal = () => {
-    setModalIndex(null);
-    setImageIndex(0);
-  };
+  const openModal = (index: number) => setModalIndex(index);
+  const closeModal = () => setModalIndex(null);
 
   const goPrev = () => {
     if (modalIndex === null) return;
-    const newIndex = (modalIndex - 1 + WORK_PHOTOS.length) % WORK_PHOTOS.length;
-    setModalIndex(newIndex);
-    setImageIndex(0);
+    setModalIndex((modalIndex - 1 + WORK_PHOTOS.length) % WORK_PHOTOS.length);
   };
 
   const goNext = () => {
     if (modalIndex === null) return;
-    const newIndex = (modalIndex + 1) % WORK_PHOTOS.length;
-    setModalIndex(newIndex);
-    setImageIndex(0);
+    setModalIndex((modalIndex + 1) % WORK_PHOTOS.length);
   };
 
-  const currentProject = modalIndex !== null ? WORK_PHOTOS[modalIndex] : null;
-  const currentImage = currentProject ? currentProject.images[imageIndex] : null;
+  const currentPhoto = modalIndex !== null ? WORK_PHOTOS[modalIndex] : null;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -55,7 +43,7 @@ export default function GalleryPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={photo.images[0]}
+              src={photo.src}
               alt={photo.caption}
               className="w-full aspect-[16/11] object-cover"
             />
@@ -91,61 +79,37 @@ export default function GalleryPage() {
             </button>
 
             <div className="relative">
-              {/* Main large image */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={currentImage}
-                alt={currentProject.caption}
-                className="w-full max-h-[70vh] object-contain rounded-xl shadow-2xl"
+                src={currentPhoto.src}
+                alt={currentPhoto.caption}
+                className="w-full max-h-[82vh] object-contain rounded-xl shadow-2xl"
               />
 
-              {/* Thumbnails for additional pictures from the same job - scroll left/right */}
-              {currentProject.images.length > 1 && (
-                <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
-                  {currentProject.images.map((imgSrc, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setImageIndex(idx)}
-                      className={`flex-shrink-0 rounded overflow-hidden border-2 ${idx === imageIndex ? 'border-[var(--logo-teal)]' : 'border-transparent'}`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={imgSrc}
-                        alt=""
-                        className="w-20 h-14 object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              <div className="mt-2 text-center">
-                <div className="text-[var(--logo-teal)] text-xs tracking-[2px] font-semibold">{currentProject.category}</div>
-                <p className="mt-1 text-lg text-white max-w-3xl mx-auto">{currentProject.caption}</p>
-                {currentProject.images.length > 1 && (
-                  <p className="text-xs text-white/60 mt-1">Scroll thumbnails or use arrows to see more photos from this project</p>
-                )}
+              <div className="mt-4 text-center">
+                <div className="text-[var(--logo-teal)] text-xs tracking-[2px] font-semibold">{currentPhoto.category}</div>
+                <p className="mt-1 text-lg text-white max-w-3xl mx-auto">{currentPhoto.caption}</p>
               </div>
             </div>
 
-            {/* Project Navigation */}
+            {/* Navigation */}
             <button
               onClick={goPrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
-              aria-label="Previous project"
+              aria-label="Previous photo"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={goNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
-              aria-label="Next project"
+              aria-label="Next photo"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
 
             <div className="mt-3 text-center text-xs text-white/50">
-              Project {modalIndex + 1} of {WORK_PHOTOS.length} — Press ESC to close
+              {modalIndex + 1} / {WORK_PHOTOS.length} — Press ESC to close
             </div>
           </div>
         </div>

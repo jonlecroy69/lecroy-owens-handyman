@@ -159,14 +159,13 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {WORK_PHOTOS.slice(0, 6).map((photo, idx) => {
-            const thumbSrc = photo.images ? photo.images[0].src : photo.src;
-            const thumbCaption = photo.images ? photo.images[0].caption : photo.caption;
+            const thumb = photo.images[0];
             return (
               <div key={idx} className="photo-card group relative aspect-[16/11] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={thumbSrc}
-                  alt={thumbCaption}
+                  src={thumb.src}
+                  alt={thumb.caption}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 p-4">

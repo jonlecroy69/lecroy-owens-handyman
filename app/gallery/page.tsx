@@ -32,7 +32,7 @@ export default function GalleryPage() {
   };
 
   const currentPhoto = modalIndex !== null ? WORK_PHOTOS[modalIndex] : null;
-  const currentImages = currentPhoto ? (currentPhoto.images || [{ src: currentPhoto.src, caption: currentPhoto.caption }]) : [];
+  const currentImages = currentPhoto ? currentPhoto.images : [];
   const currentImage = currentImages[imageIndex] || currentImages[0];
 
   return (
@@ -49,7 +49,7 @@ export default function GalleryPage() {
       {/* Redesigned gallery grid — clean cards, hover, click to enlarge */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {WORK_PHOTOS.map((photo, index) => {
-          const thumb = photo.images ? photo.images[0] : { src: photo.src, caption: photo.caption };
+          const thumb = photo.images[0];
           return (
             <figure
               key={index}

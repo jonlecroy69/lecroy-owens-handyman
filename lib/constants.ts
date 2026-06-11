@@ -17,7 +17,6 @@ export const BUSINESS = {
     country: "US",
   },
   yearsExperience: "10+",
-  license: "", // Removed as requested
   serviceRadius: "50-100 miles",
   description:
     "Professional handyman, carpentry, deck building, siding, flooring, bathroom and home remodeling, electrical, and maintenance services serving Spartanburg and the Upstate of South Carolina.",
@@ -30,6 +29,12 @@ export type Service = {
   longDesc: string;
   keywords: string[];
   image?: string; // path under /images/work/ or public
+};
+
+export type WorkPhoto = {
+  images: string[];
+  caption: string;
+  category: string;
 };
 
 export const SERVICES: Service[] = [
@@ -157,58 +162,65 @@ export const TESTIMONIALS = [
 ];
 
 // Full list of project photos for gallery and homepage featured work.
-// Updated with multiple images per job for lightbox carousels where specified.
-// Removed the general license badge as requested. New phone number.
-// Removed the last decks section, added its picture to the kitchen flooring before it.
-export const WORK_PHOTOS = [
+// Using the new detailed logo's color story: real before/after and completed work.
+export const WORK_PHOTOS: WorkPhoto[] = [
   {
     images: [
-      { src: "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg", caption: "Main deck view with railings and stairs" },
-      { src: "/images/work/deck-build-1.jpg", caption: "Deck construction detail" },
-      { src: "/images/work/deck-build-2.jpg", caption: "Deck framing and supports" },
-      { src: "/images/work/deck-build-3.jpg", caption: "Deck installation in progress" },
-      { src: "/images/work/deck-build-4.jpg", caption: "Completed deck section" },
+      "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg",
+      "/images/work/deck-add1.jpg",
+      "/images/work/deck-add2.jpg",
+      "/images/work/deck-add3.jpg",
+      "/images/work/deck-add4.jpg",
     ],
     caption: "Custom wooden deck with railings and stairs — full backyard transformation",
     category: "Decks & Porches",
   },
   {
     images: [
-      { src: "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg", caption: "Professional siding installation and repair on two-story home" },
-      { src: "/images/work/siding-house-ladders.jpg", caption: "Siding work with ladders on gray house exterior" },
+      "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg",
+      "/images/work/siding-add.jpg",
+      "/images/work/siding-window.jpg",
     ],
-    caption: "Professional siding installation and repair on two-story home — includes window installation",
+    caption: "Professional siding installation and repair on two-story home, including window installation",
     category: "Siding",
   },
   {
-    images: [
-      { src: "/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg", caption: "Board & batten siding refresh with clean exterior lines" },
-    ],
+    images: ["/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg"],
     caption: "Board & batten siding refresh with clean exterior lines",
     category: "Siding",
   },
   {
-    images: [
-      { src: "/images/work/bedroom-barn-doors-reclaimed.jpg", caption: "Speckled epoxy garage floor coating — durable, easy-clean finish" },
-    ],
+    images: ["/images/work/flooring-garage-speckled.jpg"],
     caption: "Speckled epoxy garage floor coating — durable, easy-clean finish",
     category: "Flooring",
   },
   {
     images: [
-      { src: "/images/work/bedroom-rustic-wood-bed.jpg", caption: "Custom green marble walk-in shower with rain head and recessed niche" },
-      { src: "/images/work/bathroom-shower-before.jpg", caption: "Bathroom remodel - before" },
-      { src: "/images/work/bathroom-shower-after.jpg", caption: "Bathroom remodel - after with new shower" },
+      "/images/work/bathroom-green-marble-shower.jpg",
+      "/images/work/bathroom-add1.jpg",
+      "/images/work/bathroom-add2.jpg",
     ],
     caption: "Custom green marble walk-in shower with rain head and recessed niche",
     category: "Bathroom Remodeling",
   },
   {
-    images: [
-      { src: "/images/work/kitchen-white-cabinets.jpg", caption: "White shaker kitchen cabinets and marble tile flooring installation" },
-      { src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg", caption: "Deck and porch construction detail (added to flooring section)" },
-    ],
+    images: ["/images/work/kitchen-white-cabinets.jpg"],
     caption: "White shaker kitchen cabinets and marble tile flooring installation",
     category: "Flooring",
+  },
+  {
+    images: ["/images/work/bedroom-rustic-wood-bed.jpg"],
+    caption: "Rustic reclaimed wood bed frame with clean white bedding",
+    category: "Remodeling",
+  },
+  {
+    images: ["/images/work/bedroom-barn-doors-reclaimed.jpg"],
+    caption: "Reclaimed wood barn door closet system and matching headboard",
+    category: "Remodeling",
+  },
+  {
+    images: ["/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg"],
+    caption: "Deck and porch construction detail",
+    category: "Decks & Porches",
   },
 ];

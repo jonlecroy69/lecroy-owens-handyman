@@ -159,6 +159,7 @@ export const TESTIMONIALS = [
 // Full list of project photos for gallery and homepage featured work.
 // Updated with multiple images per job for lightbox carousels where specified.
 // Removed the general license badge as requested. New phone number.
+// Removed the last decks section, added its picture to the kitchen flooring before it.
 export const WORK_PHOTOS = [
   {
     images: [
@@ -187,7 +188,9 @@ export const WORK_PHOTOS = [
     category: "Siding",
   },
   {
-    src: "/images/work/bedroom-barn-doors-reclaimed.jpg",
+    images: [
+      { src: "/images/work/bedroom-barn-doors-reclaimed.jpg", caption: "Speckled epoxy garage floor coating — durable, easy-clean finish" },
+    ],
     caption: "Speckled epoxy garage floor coating — durable, easy-clean finish",
     category: "Flooring",
   },
@@ -201,13 +204,11 @@ export const WORK_PHOTOS = [
     category: "Bathroom Remodeling",
   },
   {
-    src: "/images/work/kitchen-white-cabinets.jpg",
+    images: [
+      { src: "/images/work/kitchen-white-cabinets.jpg", caption: "White shaker kitchen cabinets and marble tile flooring installation" },
+      { src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg", caption: "Deck and porch construction detail (added to flooring section)" },
+    ],
     caption: "White shaker kitchen cabinets and marble tile flooring installation",
     category: "Flooring",
-  },
-  {
-    src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg",
-    caption: "Deck and porch construction detail",
-    category: "Decks & Porches",
   },
 ];

@@ -16,7 +16,7 @@ export const BUSINESS = {
     postalCode: "", // Add if you have a mailing/office zip
     country: "US",
   },
-  yearsExperience: "10+", // TODO: Update with exact years + highlights from user
+  yearsExperience: "10+",
   license: "Fully Licensed & Insured SC Residential Builder",
   serviceRadius: "50-100 miles",
   description:
@@ -130,6 +130,9 @@ export const SERVICE_AREA_DESCRIPTION =
 // Production domain - update this when you assign the real domain
 export const DOMAIN = "lecroy-owens.com";
 export const SITE_URL = `https://${DOMAIN}`;
+
+// Contact form - wired to Formspree
+export const FORM_ENDPOINT = "https://formspree.io/f/xojznlga";
 
 // Placeholder testimonials (clearly marked for easy replacement)
 export const TESTIMONIALS = [

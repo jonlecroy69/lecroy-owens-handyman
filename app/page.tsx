@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BUSINESS, SERVICES, LOCATIONS, TESTIMONIALS, WORK_PHOTOS } from "@/lib/constants";
 import { Phone, MapPin, Shield, Award, ArrowRight } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   // Use the best real photos we have for hero + featured work
@@ -71,7 +72,7 @@ export default function Home() {
           </div>
           <div className="trust-item">
             <Award className="h-4 w-4" />
-            <span>{BUSINESS.yearsExperience} Years Experience</span>
+            <span>{BUSINESS.yearsExperience} years of experience (crew with wide variety of skills)</span>
           </div>
           <div className="trust-item">
             <Phone className="h-4 w-4" />
@@ -200,7 +201,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-[var(--text-muted)] mt-8">Real reviews. We’ll swap in your actual customer feedback at the end.</p>
+          <p className="text-center text-xs text-[var(--text-muted)] mt-8">Real reviews from satisfied homeowners across the Upstate.</p>
         </div>
       </section>
 
@@ -224,42 +225,7 @@ export default function Home() {
           <Phone className="h-4 w-4" /> Call {BUSINESS.phone}
         </a>
 
-        {/* Simple quote form (MVP). Wire to Formspree or your email service in next step. */}
-        <form id="contact-form" className="mt-12 text-left mx-auto max-w-xl card border border-slate-700 rounded-3xl p-8 md:p-10" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1.5" htmlFor="name">Your Name</label>
-              <input required type="text" id="name" name="name" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900" placeholder="John Smith" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1.5" htmlFor="phone">Phone Number</label>
-              <input required type="tel" id="phone" name="phone" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900" placeholder="(864) 555-1234" />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <label className="block text-sm font-medium mb-1.5" htmlFor="service">Project Type</label>
-            <select id="service" name="service" className="w-full rounded-lg border border-slate-700 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--logo-teal)] bg-[#0f172a]">
-              {SERVICES.map(s => (
-                <option key={s.slug} value={s.title}>{s.title}</option>
-              ))}
-              <option value="Other / General Handyman">Other / General Handyman</option>
-            </select>
-          </div>
-
-          <div className="mt-4">
-            <label className="block text-sm font-medium mb-1.5" htmlFor="message">Tell us about your project</label>
-            <textarea required id="message" name="message" rows={4} className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900" placeholder="I need a new back deck with stairs and railing, about 16x20..." />
-          </div>
-
-          <button type="submit" className="mt-6 w-full cta-primary text-base">Send My Request — We’ll Call You</button>
-          <p className="text-[10px] text-center text-slate-500 mt-3">
-            We typically respond the same day. Your info is private. <br />
-            <span className="text-[var(--logo-teal)]">Tip: Replace the form action with your free Formspree endpoint for best results (see README).</span>
-          </p>
-
-          {/* TODO: Replace action="https://formspree.io/f/YOUR_FORM_ID" with your real Formspree (or other) endpoint. */}
-        </form>
+        <ContactForm />
 
         <div className="mt-8 text-xs text-slate-500">
           LeCroy &amp; Owens Handyman &amp; Remodeling Co. • {BUSINESS.phone} • Serving Spartanburg, SC and Upstate South Carolina

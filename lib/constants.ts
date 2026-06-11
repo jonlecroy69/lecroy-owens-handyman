@@ -6,8 +6,8 @@ export const BUSINESS = {
   name: "LeCroy & Owens Handyman & Remodeling Co.",
   shortName: "LeCroy & Owens Handyman",
   tagline: "Quality craftsmanship you can count on — from decks and porches to full home remodels.",
-  phone: "864-270-2794",
-  phoneHref: "tel:8642702794",
+  phone: "(864)606-4438",
+  phoneHref: "tel:+18646064438",
   email: "contact@lecroy-owens.com", // Update this to your real email if different
   address: {
     street: "Spartanburg, SC", // Update with full street when available for schema
@@ -17,7 +17,6 @@ export const BUSINESS = {
     country: "US",
   },
   yearsExperience: "10+",
-  license: "Fully Licensed & Insured SC Residential Builder",
   serviceRadius: "50-100 miles",
   description:
     "Professional handyman, carpentry, deck building, siding, flooring, bathroom and home remodeling, electrical, and maintenance services serving Spartanburg and the Upstate of South Carolina.",
@@ -30,6 +29,17 @@ export type Service = {
   longDesc: string;
   keywords: string[];
   image?: string; // path under /images/work/ or public
+};
+
+export type WorkPhotoImage = {
+  src: string;
+  caption: string;
+};
+
+export type WorkPhoto = {
+  category: string;
+  caption: string;
+  images: WorkPhotoImage[];
 };
 
 export const SERVICES: Service[] = [
@@ -158,55 +168,128 @@ export const TESTIMONIALS = [
 
 // Full list of project photos for gallery and homepage featured work.
 // Using the new detailed logo's color story: real before/after and completed work.
-export const WORK_PHOTOS = [
+// All entries use the consistent multi-image shape.
+export const WORK_PHOTOS: WorkPhoto[] = [
   {
-    src: "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg",
+    category: "Decks & Porches",
     caption: "Custom wooden deck with railings and stairs — full backyard transformation",
-    category: "Decks & Porches",
+    images: [
+      {
+        src: "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg",
+        caption: "Custom wooden deck with railings and stairs — full backyard transformation",
+      },
+      {
+        src: "/images/work/deck-porch-2.jpg",
+        caption: "Custom wooden deck with railings and stairs — full backyard transformation",
+      },
+      {
+        src: "/images/work/deck-porch-3.jpg",
+        caption: "Custom wooden deck with railings and stairs — full backyard transformation",
+      },
+      {
+        src: "/images/work/deck-porch-4.jpg",
+        caption: "Custom wooden deck with railings and stairs — full backyard transformation",
+      },
+      {
+        src: "/images/work/deck-porch-5.jpg",
+        caption: "Custom wooden deck with railings and stairs — full backyard transformation",
+      },
+    ],
   },
   {
-    src: "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg",
-    caption: "Professional siding installation and repair on two-story home",
     category: "Siding",
+    caption: "Professional siding installation and window installation on two-story home",
+    images: [
+      {
+        src: "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg",
+        caption: "Professional siding installation and window installation on two-story home",
+      },
+      {
+        src: "/images/work/siding-window-installation.jpg",
+        caption: "Professional siding installation and window installation on two-story home",
+      },
+    ],
   },
   {
-    src: "/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg",
+    category: "Siding",
     caption: "Board & batten siding refresh with clean exterior lines",
-    category: "Siding",
+    images: [
+      {
+        src: "/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg",
+        caption: "Board & batten siding refresh with clean exterior lines",
+      },
+    ],
   },
   {
-    src: "/images/work/bedroom-barn-doors-reclaimed.jpg",
+    category: "Flooring",
     caption: "Speckled epoxy garage floor coating — durable, easy-clean finish",
-    category: "Flooring",
+    images: [
+      {
+        src: "/images/work/bedroom-barn-doors-reclaimed.jpg",
+        caption: "Speckled epoxy garage floor coating — durable, easy-clean finish",
+      },
+    ],
   },
   {
-    src: "/images/work/bedroom-rustic-wood-bed.jpg",
-    caption: "Custom green marble walk-in shower with rain head and recessed niche",
     category: "Bathroom Remodeling",
+    caption: "Custom green marble walk-in shower with rain head and recessed niche",
+    images: [
+      {
+        src: "/images/work/bedroom-rustic-wood-bed.jpg",
+        caption: "Custom green marble walk-in shower with rain head and recessed niche",
+      },
+      {
+        src: "/images/work/bathroom-remodel-2.jpg",
+        caption: "Custom green marble walk-in shower with rain head and recessed niche",
+      },
+      {
+        src: "/images/work/bathroom-remodel-3.jpg",
+        caption: "Custom green marble walk-in shower with rain head and recessed niche",
+      },
+    ],
   },
   {
-    src: "/images/work/kitchen-white-cabinets.jpg",
-    caption: "White shaker kitchen cabinets and marble tile flooring installation",
     category: "Flooring",
+    caption: "White shaker kitchen cabinets and marble tile flooring installation",
+    images: [
+      {
+        src: "/images/work/kitchen-white-cabinets.jpg",
+        caption: "White shaker kitchen cabinets and marble tile flooring installation",
+      },
+      {
+        src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg",
+        caption: "Deck and porch construction detail",
+      },
+    ],
   },
   {
-    src: "/images/work/bathroom-green-marble-shower.jpg",
+    category: "Remodeling",
     caption: "Rustic reclaimed wood bed frame with clean white bedding",
-    category: "Remodeling",
+    images: [
+      {
+        src: "/images/work/bathroom-green-marble-shower.jpg",
+        caption: "Rustic reclaimed wood bed frame with clean white bedding",
+      },
+    ],
   },
   {
-    src: "/images/work/flooring-garage-speckled.jpg",
+    category: "Remodeling",
     caption: "Reclaimed wood barn door closet system and matching headboard",
-    category: "Remodeling",
+    images: [
+      {
+        src: "/images/work/flooring-garage-speckled.jpg",
+        caption: "Reclaimed wood barn door closet system and matching headboard",
+      },
+    ],
   },
   {
-    src: "/images/work/image-d7a23044-1d10-4cb8-ba5f-35cacfc1c2ab.jpg",
-    caption: "Detailed exterior siding and trim work",
     category: "Siding",
-  },
-  {
-    src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg",
-    caption: "Deck and porch construction detail",
-    category: "Decks & Porches",
+    caption: "Detailed exterior siding and trim work",
+    images: [
+      {
+        src: "/images/work/image-d7a23044-1d10-4cb8-ba5f-35cacfc1c2ab.jpg",
+        caption: "Detailed exterior siding and trim work",
+      },
+    ],
   },
 ];

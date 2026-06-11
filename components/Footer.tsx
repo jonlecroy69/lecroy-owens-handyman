@@ -27,7 +27,7 @@ export default function Footer() {
                 {BUSINESS.email}
               </a>
               <div>Spartanburg, South Carolina</div>
-              <div className="text-emerald-400 text-xs mt-2 font-medium">{BUSINESS.license}</div>
+              {/* License badge removed per request */}
             </div>
           </div>
 

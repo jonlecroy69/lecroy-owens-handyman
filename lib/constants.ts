@@ -6,18 +6,18 @@ export const BUSINESS = {
   name: "LeCroy & Owens Handyman & Remodeling Co.",
   shortName: "LeCroy & Owens Handyman",
   tagline: "Quality craftsmanship you can count on — from decks and porches to full home remodels.",
-  phone: "864-270-2794",
-  phoneHref: "tel:8642702794",
+  phone: "(864)606-4438",
+  phoneHref: "tel:8646064438",
   email: "contact@lecroy-owens.com", // Update this to your real email if different
   address: {
-    street: "Spartanburg, SC", // Update with full street when available for schema
+    street: "Spartanburg, SC", // Update with full street address for better schema & GBP
     locality: "Spartanburg",
     region: "SC",
     postalCode: "", // Add if you have a mailing/office zip
     country: "US",
   },
   yearsExperience: "10+",
-  license: "Fully Licensed & Insured SC Residential Builder",
+  license: "", // Removed as requested
   serviceRadius: "50-100 miles",
   description:
     "Professional handyman, carpentry, deck building, siding, flooring, bathroom and home remodeling, electrical, and maintenance services serving Spartanburg and the Upstate of South Carolina.",
@@ -157,20 +157,32 @@ export const TESTIMONIALS = [
 ];
 
 // Full list of project photos for gallery and homepage featured work.
-// Using the new detailed logo's color story: real before/after and completed work.
+// Updated with multiple images per job for lightbox carousels where specified.
+// Removed the general license badge as requested. New phone number.
 export const WORK_PHOTOS = [
   {
-    src: "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg",
+    images: [
+      { src: "/images/work/image-d7352d30-f24f-4702-9307-99f41702a9af.jpg", caption: "Main deck view with railings and stairs" },
+      { src: "/images/work/deck-build-1.jpg", caption: "Deck construction detail" },
+      { src: "/images/work/deck-build-2.jpg", caption: "Deck framing and supports" },
+      { src: "/images/work/deck-build-3.jpg", caption: "Deck installation in progress" },
+      { src: "/images/work/deck-build-4.jpg", caption: "Completed deck section" },
+    ],
     caption: "Custom wooden deck with railings and stairs — full backyard transformation",
     category: "Decks & Porches",
   },
   {
-    src: "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg",
-    caption: "Professional siding installation and repair on two-story home",
+    images: [
+      { src: "/images/work/image-71e08b1f-79a0-438c-b4ac-45b567e7935f.jpg", caption: "Professional siding installation and repair on two-story home" },
+      { src: "/images/work/siding-house-ladders.jpg", caption: "Siding work with ladders on gray house exterior" },
+    ],
+    caption: "Professional siding installation and repair on two-story home — includes window installation",
     category: "Siding",
   },
   {
-    src: "/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg",
+    images: [
+      { src: "/images/work/image-be24b087-cebd-4846-9920-32698e20ca91.jpg", caption: "Board & batten siding refresh with clean exterior lines" },
+    ],
     caption: "Board & batten siding refresh with clean exterior lines",
     category: "Siding",
   },
@@ -180,7 +192,11 @@ export const WORK_PHOTOS = [
     category: "Flooring",
   },
   {
-    src: "/images/work/bedroom-rustic-wood-bed.jpg",
+    images: [
+      { src: "/images/work/bedroom-rustic-wood-bed.jpg", caption: "Custom green marble walk-in shower with rain head and recessed niche" },
+      { src: "/images/work/bathroom-shower-before.jpg", caption: "Bathroom remodel - before" },
+      { src: "/images/work/bathroom-shower-after.jpg", caption: "Bathroom remodel - after with new shower" },
+    ],
     caption: "Custom green marble walk-in shower with rain head and recessed niche",
     category: "Bathroom Remodeling",
   },
@@ -188,21 +204,6 @@ export const WORK_PHOTOS = [
     src: "/images/work/kitchen-white-cabinets.jpg",
     caption: "White shaker kitchen cabinets and marble tile flooring installation",
     category: "Flooring",
-  },
-  {
-    src: "/images/work/bathroom-green-marble-shower.jpg",
-    caption: "Rustic reclaimed wood bed frame with clean white bedding",
-    category: "Remodeling",
-  },
-  {
-    src: "/images/work/flooring-garage-speckled.jpg",
-    caption: "Reclaimed wood barn door closet system and matching headboard",
-    category: "Remodeling",
-  },
-  {
-    src: "/images/work/image-d7a23044-1d10-4cb8-ba5f-35cacfc1c2ab.jpg",
-    caption: "Detailed exterior siding and trim work",
-    category: "Siding",
   },
   {
     src: "/images/work/image-9a457e3c-8c2d-4100-87cc-dd2753d871f7.jpg",

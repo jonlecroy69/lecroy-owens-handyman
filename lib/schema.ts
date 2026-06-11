@@ -45,10 +45,12 @@ export function generateLocalBusinessJsonLd() {
     email: BUSINESS.email,
     address,
     areaServed,
+    image: `${SITE_URL}/images/logo.png`, // Use your logo or a hero image
+    logo: `${SITE_URL}/images/logo.png`,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Home Improvement & Remodeling Services",
-      itemListElement: SERVICES.map((service, index) => ({
+      itemListElement: SERVICES.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
@@ -57,12 +59,10 @@ export function generateLocalBusinessJsonLd() {
         },
       })),
     },
-    // Add when you have exact coords or a real street address with geo
-    // geo: { "@type": "GeoCoordinates", latitude: XX, longitude: YY },
-    sameAs: [], // Add Facebook, Google Business Profile URL, etc. when available
+    geo: { "@type": "GeoCoordinates", latitude: 34.9496, longitude: -81.9320 }, // Approximate center of Spartanburg - update with exact if you have a physical address
+    sameAs: [], // Add your Google Business Profile URL, Facebook, etc. once set up
     priceRange: "$$",
     openingHours: "Mo-Fr 07:00-17:00",
-    license: BUSINESS.license,
   };
 }
 

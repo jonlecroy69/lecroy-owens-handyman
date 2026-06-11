@@ -28,13 +28,13 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-xl text-white/90">
             Decks, porches, siding, bathroom remodels, electrical &amp; full home improvements.<br className="hidden sm:block" />
-            Licensed. Insured. Serving Spartanburg and the Upstate for {BUSINESS.yearsExperience} years.
+            Serving Spartanburg and the Upstate for {BUSINESS.yearsExperience} years.
           </p>
 
           {/* Prominent logo mark in hero to center the brand */}
           <div className="mt-6 flex justify-center">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo-banner.png" 
               alt={BUSINESS.name} 
               className="h-20 md:h-28 w-auto opacity-95" 
             />
@@ -66,10 +66,6 @@ export default function Home() {
       {/* TRUST BAR — Clean, Apple/OpenAI minimal style */}
       <section className="border-b border-slate-800 py-6" style={{ background: 'var(--surface)' }}>
         <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm">
-          <div className="trust-item">
-            <Shield className="h-4 w-4" />
-            <span>{BUSINESS.license}</span>
-          </div>
           <div className="trust-item">
             <Award className="h-4 w-4" />
             <span>{BUSINESS.yearsExperience} years of experience (crew with wide variety of skills)</span>
@@ -162,20 +158,24 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {WORK_PHOTOS.slice(0, 6).map((photo, idx) => (
-            <div key={idx} className="photo-card group relative aspect-[16/11] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={photo.src}
-                alt={photo.caption}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 p-4">
-                <div className="text-[10px] tracking-[1.5px] text-[var(--logo-teal)] font-semibold mb-1">{photo.category}</div>
-                <div className="text-white text-sm font-medium leading-tight line-clamp-2 drop-shadow">{photo.caption}</div>
+          {WORK_PHOTOS.slice(0, 6).map((photo, idx) => {
+            const thumbSrc = photo.images ? photo.images[0].src : photo.src;
+            const thumbCaption = photo.images ? photo.images[0].caption : photo.caption;
+            return (
+              <div key={idx} className="photo-card group relative aspect-[16/11] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={thumbSrc}
+                  alt={thumbCaption}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 p-4">
+                  <div className="text-[10px] tracking-[1.5px] text-[var(--logo-teal)] font-semibold mb-1">{photo.category}</div>
+                  <div className="text-white text-sm font-medium leading-tight line-clamp-2 drop-shadow">{photo.caption}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-6 text-center">
